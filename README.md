@@ -1,6 +1,6 @@
 <div align="center">
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=26&pause=1000&color=6366F1&center=true&vCenter=true&width=700&lines=Hey%2C+I'm+Wesley+Reis+%F0%9F%91%8B;Full+Stack+Developer;Java+%7C+Kotlin+%7C+Spring+Boot+%7C+Kafka;Python+%7C+Go+%7C+Ruby+%7C+TypeScript;React+%7C+React+Native+%7C+Next.js;Always+learning+new+things+%F0%9F%9A%80)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=26&pause=1000&color=6366F1&center=true&vCenter=true&width=700&lines=Hey%2C+I'm+Wesley+Reis+%F0%9F%91%8B;Software+Engineer+%C2%B7+AI+Engineering;LLM+Agents+%7C+MCP+%7C+Graph+RAG+%7C+Evals;TypeScript+%7C+Python+%7C+Java+%7C+Kotlin;From+backend+systems+to+AI+systems+%F0%9F%9A%80)](https://git.io/typing-svg)
 
 <br/>
 
@@ -13,19 +13,21 @@
 
 ## 👨‍💻 About Me
 
+I'm a full-stack engineer moving my backend experience into **AI engineering**: LLM agents, MCP servers and graph RAG, built with the same habits as any production system. Deterministic code makes the decisions, every claim is backed by an eval, and guardrails assume the model will get things wrong.
+
 ```kotlin
 data class WesleyReis(
     val name     : String = "Wesley Reis",
-    val role     : String = "Full Stack Developer",
-    val focus    : List<String> = listOf("Backend", "Frontend", "Cloud", "AI-Assisted Engineering"),
+    val role     : String = "Software Engineer · AI Engineering",
+    val focus    : List<String> = listOf("LLM Agents", "MCP Servers", "Graph RAG", "Evals", "Backend"),
 
-    val jvm      : List<String> = listOf("Java 21", "Kotlin", "Spring Boot 3", "Spring WebFlux", "Hibernate"),
-    val backend  : List<String> = listOf("Python/FastAPI", "Go", "Ruby on Rails", "NestJS", "C#/.NET"),
-    val frontend : List<String> = listOf("React 19", "Next.js", "TypeScript", "Vue/Nuxt", "React Native"),
-    val data     : List<String> = listOf("PostgreSQL", "MongoDB", "Redis", "SQLite"),
-    val messaging: List<String> = listOf("Apache Kafka", "RabbitMQ"),
-    val cloud    : List<String> = listOf("AWS", "Azure", "GCP", "Docker", "Kubernetes", "Terraform"),
-    val ai       : List<String> = listOf("Claude Code", "Anthropic SDK", "OpenAI SDK"),
+    val ai       : List<String> = listOf("LangGraph", "LangChain", "MCP", "Neo4j / Cypher", "OpenRouter", "Anthropic SDK", "OpenAI SDK"),
+    val practice : List<String> = listOf("Eval-driven prompts", "Structured outputs", "Guardrails", "Agent memory"),
+    val languages: List<String> = listOf("TypeScript", "Python", "Java 21", "Kotlin"),
+    val backend  : List<String> = listOf("Node.js / Fastify", "Spring Boot 3", "FastAPI"),
+    val frontend : List<String> = listOf("React 19", "Next.js"),
+    val data     : List<String> = listOf("PostgreSQL", "Neo4j", "Redis", "SQLite", "Kafka"),
+    val cloud    : List<String> = listOf("AWS", "Docker", "GitHub Actions"),
 
     val funFact  : String = "I turn ☕ into distributed systems"
 )
@@ -33,67 +35,126 @@ data class WesleyReis(
 
 ---
 
+## 🚀 Featured Projects
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### 🏎️ [f1-graph-qa](https://github.com/wsqreis/f1-graph-qa)
+Ask about **Formula 1 history in plain English**. A LangGraph agent writes Cypher over a Neo4j graph of every Grand Prix since 1950 (26k race results), fixes its own failed queries, and answers only from what the database returns.
+
+- Self-correction on errors, guard rejections and empty results
+- Read-only defence in depth: static guard + READ transactions
+- Execution-accuracy eval against hand-written reference queries
+
+![LangGraph](https://img.shields.io/badge/LangGraph-1C3C3C?style=flat-square&logo=langchain&logoColor=white)
+![Neo4j](https://img.shields.io/badge/Neo4j-4581C3?style=flat-square&logo=neo4j&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+
+</td>
+<td width="50%" valign="top">
+
+### 🎬 [tmdb-mcp](https://github.com/wsqreis/tmdb-mcp)
+An **MCP server for The Movie Database**, designed around how agents use tools: compact typed outputs, names instead of ids, and errors an agent can act on.
+
+- Tool outputs up to 99% smaller than raw TMDB responses
+- `discover` by genre and streaming service in one call
+- Stdio and HTTP modes, with bearer auth and rate limiting
+
+![MCP](https://img.shields.io/badge/MCP-000000?style=flat-square&logo=anthropic&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
+![Zod](https://img.shields.io/badge/Zod-3E67B1?style=flat-square&logo=zod&logoColor=white)
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### 🧳 [travel-planner-agent](https://github.com/wsqreis/travel-planner-agent)
+A travel assistant with **long-term memory the user controls**. It learns preferences from what the traveller says, never from its own suggestions, and keeps a change log.
+
+- Memory extraction runs in parallel with the reply
+- Structured `set`/`add`/`remove`/`clear` updates in SQLite
+- `/memory`, `/history`, `/forget`; precision/recall eval
+
+![LangGraph](https://img.shields.io/badge/LangGraph-1C3C3C?style=flat-square&logo=langchain&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)
+
+</td>
+<td width="50%" valign="top">
+
+### 🍝 [restaurant-booking-agent](https://github.com/wsqreis/restaurant-booking-agent)
+A conversational **table-booking agent** where the LLM understands and phrases, and deterministic code decides availability.
+
+- Multi-turn slot filling; side questions keep the booking
+- Opening hours, table assignment and alternatives in code
+- Intent and slot-extraction eval, in three languages
+
+![LangGraph](https://img.shields.io/badge/LangGraph-1C3C3C?style=flat-square&logo=langchain&logoColor=white)
+![Fastify](https://img.shields.io/badge/Fastify-000000?style=flat-square&logo=fastify&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)
+
+</td>
+</tr>
+</table>
+
+---
+
+## 🧭 How I Build AI Systems
+
+The same principles run through every project above:
+
+| Principle | In practice |
+|---|---|
+| **The LLM understands, code decides** | The booking agent never decides availability; a rules engine does, and the reply may only use its result. |
+| **No claim without an eval** | Each project ships an eval runner: execution accuracy for text-to-Cypher, intent and slot accuracy, memory precision and recall. |
+| **Assume the model will be wrong** | Read-only guards plus READ transactions for generated Cypher, retries fed with the actual error, and graceful failure when extraction breaks. |
+| **Design tools for agents, not for APIs** | Compact outputs, human names instead of ids, and error messages that tell the agent how to fix its call. |
+| **Users own their data** | Agent memory can be inspected, traced to when it was learned, and erased. |
+
+---
+
 ## 🛠️ Tech Stack
 
-### ☕ JVM — Java & Kotlin
-![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
-![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)
-![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)
-![Spring](https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
-![Apache Kafka](https://img.shields.io/badge/Apache_Kafka-231F20?style=for-the-badge&logo=apache-kafka&logoColor=white)
-![Hibernate](https://img.shields.io/badge/Hibernate-59666C?style=for-the-badge&logo=hibernate&logoColor=white)
-
-### 🐍 Python
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
-![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)
-
-### 🐹 Go & Ruby
-![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)
-![Ruby](https://img.shields.io/badge/Ruby-CC342D?style=for-the-badge&logo=ruby&logoColor=white)
-![Rails](https://img.shields.io/badge/Rails-D30001?style=for-the-badge&logo=ruby-on-rails&logoColor=white)
-
-### 🌐 JavaScript / TypeScript / Node
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![NestJS](https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white)
-![C#](https://img.shields.io/badge/C%23-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
-
-### 🖥️ Frontend & Mobile
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
-![React Native](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vuedotjs&logoColor=white)
-![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
-![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
-
-### 🗄️ Databases & Messaging
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
-![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
-![Apache Kafka](https://img.shields.io/badge/Kafka-231F20?style=for-the-badge&logo=apache-kafka&logoColor=white)
-![RabbitMQ](https://img.shields.io/badge/RabbitMQ-FF6600?style=for-the-badge&logo=rabbitmq&logoColor=white)
-
-### ☁️ Cloud, Infra & DevOps
-![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)
-![Azure](https://img.shields.io/badge/Azure-0078D4?style=for-the-badge&logo=microsoft-azure&logoColor=white)
-![GCP](https://img.shields.io/badge/GCP-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)
-![Terraform](https://img.shields.io/badge/Terraform-7B42BC?style=for-the-badge&logo=terraform&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
-
-### 🤖 AI-Assisted Engineering
+### 🤖 AI Engineering
+![LangGraph](https://img.shields.io/badge/LangGraph-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white)
+![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white)
+![MCP](https://img.shields.io/badge/Model_Context_Protocol-000000?style=for-the-badge&logo=anthropic&logoColor=white)
+![Neo4j](https://img.shields.io/badge/Neo4j-4581C3?style=for-the-badge&logo=neo4j&logoColor=white)
+![OpenRouter](https://img.shields.io/badge/OpenRouter-6467F2?style=for-the-badge&logoColor=white)
 ![Claude](https://img.shields.io/badge/Claude_Code-CC5500?style=for-the-badge&logo=anthropic&logoColor=white)
 ![OpenAI](https://img.shields.io/badge/OpenAI_SDK-412991?style=for-the-badge&logo=openai&logoColor=white)
 
-### 🔧 Tools
-![Swagger](https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=swagger&logoColor=black)
-![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![Prisma](https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white)
+### 💻 Languages
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)
+
+### ⚙️ Backend
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Fastify](https://img.shields.io/badge/Fastify-000000?style=for-the-badge&logo=fastify&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+
+### 🖥️ Frontend
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+
+### 🗄️ Data & Messaging
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
+![Apache Kafka](https://img.shields.io/badge/Apache_Kafka-231F20?style=for-the-badge&logo=apache-kafka&logoColor=white)
+
+### ☁️ Cloud, Infra & DevOps
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
 
 ---
 
