@@ -21,10 +21,10 @@ data class WesleyReis(
     val role     : String = "Software Engineer · AI Engineering",
     val focus    : List<String> = listOf("LLM Agents", "MCP Servers", "Graph RAG", "Evals", "Backend"),
 
-    val ai       : List<String> = listOf("LangGraph", "LangChain", "MCP", "Neo4j / Cypher", "OpenRouter", "Anthropic SDK", "OpenAI SDK"),
-    val practice : List<String> = listOf("Eval-driven prompts", "Structured outputs", "Guardrails", "Agent memory"),
+    val ai       : List<String> = listOf("LangGraph", "LangChain", "Spring AI", "MCP", "Neo4j / Cypher", "pgvector", "OpenRouter"),
+    val practice : List<String> = listOf("Eval-driven prompts", "Retrieval evals", "Structured outputs", "Guardrails", "Agent memory"),
     val languages: List<String> = listOf("TypeScript", "Python", "Java 21", "Kotlin"),
-    val backend  : List<String> = listOf("Node.js / Fastify", "Spring Boot 3", "FastAPI"),
+    val backend  : List<String> = listOf("Node.js / Fastify", "Spring Boot 4", "FastAPI"),
     val frontend : List<String> = listOf("React 19", "Next.js"),
     val data     : List<String> = listOf("PostgreSQL", "Neo4j", "Redis", "SQLite", "Kafka"),
     val cloud    : List<String> = listOf("AWS", "Docker", "GitHub Actions"),
@@ -36,6 +36,8 @@ data class WesleyReis(
 ---
 
 ## 🚀 Featured Projects
+
+### 🟦 TypeScript · LangGraph · MCP
 
 <table>
 <tr>
@@ -102,6 +104,55 @@ A conversational **table-booking agent** where the LLM understands and phrases, 
 </tr>
 </table>
 
+### ☕ Java · Spring AI
+
+<table>
+<tr>
+<td width="33%" valign="top">
+
+### 🎫 [support-triage](https://github.com/wsqreis/support-triage)
+**Event-driven ticket triage**: two Spring Boot services over Kafka. An LLM classifies tickets and drafts grounded replies; when the model is slow or down, keyword rules take over, and a human approves every reply.
+
+- Transactional outbox, dead-letter topics, idempotent consumers
+- Timeout and circuit breaker with a rules fallback
+- Drafts only when retrieval, the model and citations agree
+
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-square&logo=spring-boot&logoColor=white)
+![Kafka](https://img.shields.io/badge/Kafka-231F20?style=flat-square&logo=apache-kafka&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/pgvector-316192?style=flat-square&logo=postgresql&logoColor=white)
+
+</td>
+<td width="33%" valign="top">
+
+### 📚 [docs-assistant](https://github.com/wsqreis/docs-assistant)
+Ask the **Spring Boot reference docs** and get streamed answers that cite the exact sections. The same index is an MCP server for coding agents.
+
+- Vector, keyword and hybrid search in one PostgreSQL table
+- A retrieval eval that overturned the hybrid-search default
+- Semantic cache and an off-topic gate before any LLM call
+
+![Spring AI](https://img.shields.io/badge/Spring_AI-6DB33F?style=flat-square&logo=spring&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/pgvector-316192?style=flat-square&logo=postgresql&logoColor=white)
+![MCP](https://img.shields.io/badge/MCP-000000?style=flat-square&logo=anthropic&logoColor=white)
+
+</td>
+<td width="33%" valign="top">
+
+### 🎧 [music-graph](https://github.com/wsqreis/music-graph)
+**Explainable music recommendations** over a Last.fm listening graph, with a mood search tuned to each listener's taste.
+
+- Similar artists, friends and tags as Cypher queries
+- Explanations built from graph facts; the LLM only phrases them
+- Holdout eval against a popularity baseline
+
+![Neo4j](https://img.shields.io/badge/Neo4j-4581C3?style=flat-square&logo=neo4j&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-square&logo=spring-boot&logoColor=white)
+
+</td>
+</tr>
+</table>
+
 ---
 
 ## 🧭 How I Build AI Systems
@@ -111,8 +162,9 @@ The same principles run through every project above:
 | Principle | In practice |
 |---|---|
 | **The LLM understands, code decides** | The booking agent never decides availability; a rules engine does, and the reply may only use its result. |
-| **No claim without an eval** | Each project ships an eval runner: execution accuracy for text-to-Cypher, intent and slot accuracy, memory precision and recall. |
+| **No claim without an eval** | Each project ships an eval runner: execution accuracy for text-to-Cypher, intent and slot accuracy, memory precision and recall, retrieval hit rate, recommendation recall against a baseline. |
 | **Assume the model will be wrong** | Read-only guards plus READ transactions for generated Cypher, retries fed with the actual error, and graceful failure when extraction breaks. |
+| **The model will also be down** | A circuit breaker hands triage to keyword rules, explanations fall back to a template, and agents try the next model when a provider fails. |
 | **Design tools for agents, not for APIs** | Compact outputs, human names instead of ids, and error messages that tell the agent how to fix its call. |
 | **Users own their data** | Agent memory can be inspected, traced to when it was learned, and erased. |
 
@@ -123,6 +175,7 @@ The same principles run through every project above:
 ### 🤖 AI Engineering
 ![LangGraph](https://img.shields.io/badge/LangGraph-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white)
 ![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white)
+![Spring AI](https://img.shields.io/badge/Spring_AI-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
 ![MCP](https://img.shields.io/badge/Model_Context_Protocol-000000?style=for-the-badge&logo=anthropic&logoColor=white)
 ![Neo4j](https://img.shields.io/badge/Neo4j-4581C3?style=for-the-badge&logo=neo4j&logoColor=white)
 ![OpenRouter](https://img.shields.io/badge/OpenRouter-6467F2?style=for-the-badge&logoColor=white)
